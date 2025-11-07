@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node --watch src/server.jss"
+    "start": "node src/server.js"
   },
   "type": "module",
   "keywords": [],
@@ -14,6 +14,7 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "interview_platform": "file:..",
     "mongoose": "^8.19.1",
     "nodemon": "^3.1.10"
   }
