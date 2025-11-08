@@ -4,8 +4,8 @@ import { ENV } from './lib/env.js'
 import path from 'path'
 import { connectDB } from './lib/db.js'
 import cors from 'cors'
-import {serve} from 'inngest/express'
-import { inngest } from './lib/inngest.js'
+import { serve } from 'inngest/express'
+import { inngest, functions } from './lib/inngest.js'
 
 
 dotenv.config()
@@ -36,14 +36,14 @@ if (ENV.NODE_ENV === "production") {
     });
 }
 
-const startServer = async() => {
+const startServer = async () => {
     try {
-        await  connectDB();
+        await connectDB();
         app.listen(ENV.PORT, () => {
             console.log("server running on:", ENV.PORT);
         })
     } catch (error) {
-       console.error("Error starting the server:", error) 
+        console.error("Error starting the server:", error)
     }
 }
 
